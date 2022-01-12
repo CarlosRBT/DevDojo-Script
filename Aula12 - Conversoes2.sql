@@ -1,0 +1,23 @@
+USE AdventureWorks2019
+GO
+
+/*
+    TRY = CONTINUA O FLUXO MESMO Q DE ERRO, O RESULTADO SERÁ NULL
+    PARSE = POUCO UTILIZADO CONSOME MAIS RECURSO
+*/
+
+--SELECT(SELECT PARSE('3654' AS INT) + (SELECT PARSE('6' AS INT)))     # CONVERTEU STRING PARA INT E FEZ A SOMA
+
+--SELECT TRY_PARSE('424332F' AS INT)                                   #MESMO DANDO ERRO A EXECUÇÃO COMTINUA
+
+--SELECT PARSE('R$380,00' AS MONEY USING 'pt-BR')
+
+SELECT BusinessEntityID,
+       Title,
+       FirstName,
+       MiddleName,
+       LastName,
+       ModifiedDate,
+       TRY_CONVERT(VARCHAR(10), ModifiedDate, 103) AS DataModificada2 -- CONVERTEU DATA PARA PADRÃO BRASILEIRO 
+  FROM Person.Person
+

@@ -1,0 +1,16 @@
+USE AdventureWorks2019
+GO
+
+/*
+    EXCEPT   = RETORNARÁ OS VALORES DA PRIMEIRA TABELA/CONSULTA QUE NÃO ESTÃO NA SEGUNDA CONSULTA/TABELA
+    INTESECT = RETORNATÁ A INTERSEÇÃO DOS VALORES
+
+*/
+
+SELECT 'DevDojo' AS [Nome],
+       'Java'    AS [Linguagem]
+
+EXCEPT
+
+SELECT 'Google' AS [Empresa],
+       'Python' AS [Tipo] 
